@@ -40,10 +40,15 @@ h3, h4, h5, h6 {
   display: inline-block;
 }
 
-ol, ul {
+ul {
   margin: 0;
   padding: 10;
   list-style: square;
+}
+
+ol {
+  margin: 0;
+  padding: 10;
 }
 
 figure {
