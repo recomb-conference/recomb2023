@@ -1,0 +1,97 @@
+\documentclass[12pt]{article}
+
+\usepackage{fullpage}
+\usepackage[dvips]{graphicx}
+\usepackage{color}
+\usepackage{boxedminipage}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage[hidelinks]{hyperref}
+
+
+\newcommand{\junk}[1]{}
+
+\def\thesection{\Alph{section}}
+
+
+%\usepackage{wallpaper}
+%\ULCornerWallPaper{1}{letterhead.pdf}
+
+
+\begin{document}
+
+\input{header}
+\thispagestyle{empty}
+\begin{center}
+\Large{INVOICE}    
+\end{center}
+
+\vspace*{1cm}
+
+\begin{flushright}
+Invoice Number: \invoice\\
+Date: \today
+   
+\end{flushright}
+
+\begin{minipage}{0.49\textwidth}
+\begin{flushleft}
+\invaddress
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.47\textwidth}
+\begin{flushright}
+İhsan Doğramacı Bilkent Üniversitesi\\
+Üniversiteler Mahallesi 1609. Sokak \\
+No:10, 06800 Bilkent-Ankara, Turkey\\ 
+Doğanbey Vergi Dairesi: 1750021979
+\end{flushright}
+\end{minipage} \\
+
+
+\vspace*{0.5cm}
+
+Ref: RECOMB 2023 Registration Fee for \registrant
+
+\setlength\tabcolsep{5pt}
+\renewcommand{\arraystretch}{1.8}
+
+\begin{center}
+
+    \begin{tabular}{|l|l|}
+\hline
+     \textbf{Invoice Date: ~~~~~~~~~~~~~~~~~~~}&  \today\\
+\hline
+     \textbf{Invoice Amount:} & \$ \fee \\
+\hline
+     \textbf{Explanation:} & RECOMB 2023 Conference Registration Fee~~~~~~~~~~~~\\
+     \hline
+\end{tabular}
+\end{center}
+
+\begin{minipage}{0.50\textwidth}
+~
+\end{minipage}
+\begin{minipage}{0.50\textwidth}
+    \begin{tabular}{|l|l|}
+\hline
+     \textbf{Subtotal: ~~~~~~~~~~~~}& \$ \subtotal\\
+\hline
+     \textbf{VAT (18\%) : ~~~~~~~~~~~~}& \$ \vat\\
+\hline
+     \textbf{Total Amount: ~~~~~~~~~~~~}& \$ \fee\\
+\hline
+\end{tabular}
+\end{minipage}
+
+\vspace*{2cm}
+
+\noindent Bilkent University Application Fee Payment Service. Amount in USD.\\
+Payment received on: \invdate \\
+
+\end{document}
+
