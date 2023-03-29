@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 #define INVOICESTART 12
 
@@ -29,19 +30,20 @@ int main(int argc, char **argv){
   FILE *out;
   char *token;
   char line[10000];
-  char name[100], lname[100], address[1000], paydate[100];
+  char name[100], lname[100], address[1000], paydate[100], credit[100];
   int amount;
   float vat;
   float subtotal;
   int invno = INVOICESTART;
-  
+  int skip;
   if (in==NULL) return -1;
   fgets(line, 10000, in); // skip header
   while(1){
     if (feof(in)) break;
     fgets(line, 10000, in);
     if (feof(in)) break;
-    token = strtok (line, "\t"); //name
+    token = strtok (line, "\t"); //sira
+    token = strtok (NULL, "\t"); //name
     strcpy(name, token);
     token = strtok (NULL, "\t"); //lname
     strcpy(lname, token);
@@ -50,8 +52,13 @@ int main(int argc, char **argv){
     token = strtok (NULL, "\t"); //address
     strcpy(address, token);
     token = strtok (NULL, "\t"); //expl.
+    token = strtok (NULL, "\t"); //credit
+    strcpy(credit, token);
+    //token = strtok (NULL, "\t"); //kdv
     token = strtok (NULL, "\t"); //amount
-    amount = atoi(token);
+    skip=0;
+    while (!isdigit(token[skip])) skip++;
+    amount = atoi(token+skip);
     edit_address(address);
     //printf ("%s - %s - %s - %s - %d- \n", name, lname, paydate, address, amount);
 
@@ -67,6 +74,7 @@ int main(int argc, char **argv){
     fprintf(out, "\\newcommand{\\subtotal}{%.2f}\n", subtotal);
     fprintf(out, "\\newcommand{\\vat}{%.2f}\n", vat);
     fprintf(out, "\\newcommand{\\fee}{%d} \n", amount);
+    fprintf(out, "\\newcommand{\\creditcard}{%s} \n", credit);
     fprintf(out, " \n");
 
     fclose(out);
