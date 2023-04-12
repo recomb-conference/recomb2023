@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-#define INVOICESTART 12
+#define INVOICESTART 300
 
 void edit_address(char *address){
   int i, j;
@@ -33,7 +33,7 @@ int main(int argc, char **argv){
   char name[100], lname[100], address[1000], paydate[100], credit[100];
   int amount;
   float vat;
-  float subtotal;
+ float subtotal;
   int invno = INVOICESTART;
   int skip;
   if (in==NULL) return -1;
@@ -82,7 +82,7 @@ int main(int argc, char **argv){
     system("pdflatex invoice.tex");
     system("pdflatex invoice.tex");
 
-    sprintf(line, "mv invoice.pdf invoice-%s_%s-%d.pdf", name, lname, invno);
+    sprintf(line, "mv invoice.pdf invoice-%s-%d.pdf", lname, invno);
     system(line);
 
     invno++;
