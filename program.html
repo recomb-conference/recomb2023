@@ -1257,15 +1257,17 @@ Detailed characterization of molecular and cellular effects of genetic variants 
               <hr>
 
               <p class="text">
-                <b>[PT] T-Cell receptor optimization with reinforcement learning and mutation policies for precision immunotherapy</b>
+                <b>Privacy-Preserving Federated Neural Network Learning for Disease-Associated Cell Classification</b>
                 <br>
-                <i>Ziqi Chen, Martin Min, Hongyu Guo, Chao Cheng, Trevor Clancy and Xia Ning</i>
+                <i>Sinem Sav, Jean-Philippe Bossuat, Juan R. Troncoso-Pastoriza, Manfred Claassen and Jean-Pierre Hubaux</i>
                 <br><br>
                 <button class="btn-abstract" data-toggle="collapse" data-target="#collapses41"><i class="fas fa-pencil-alt" aria-hidden="true"></i>Abstract</button>
                 <div class="collapse" id="collapses41">
                   <p class="text">
-				 T cells monitor the health status of cells by identifying foreign peptides displayed on their surface. T-cell receptors (TCRs), which are protein complexes found on the surface of T cells, are able to bind to these peptides. This process is known as TCR recognition and constitutes a key step for immune response. Optimizing TCR sequences for TCR recognition represents a fundamental step towards the development of personalized treatments to trigger immune responses killing cancerous or virus-infected cells. In this paper, we formulated the search for these optimized TCRs as a reinforcement learning (RL) problem, and presented a framework TCRPPO with a mutation policy using proximal policy optimization. TCRPPO mutates TCRs into effective ones that can recognize given peptides. TCRPPO leverages a reward function that combines the likelihoods of mutated sequences being valid TCRs measured by a new scoring function based on deep autoencoders, with the probabilities of mutated sequences recognizing peptides from a peptide-TCR interaction predictor. We compared TCRPPO with multiple baseline methods and demonstrated that TCRPPO significantly outperforms all the baseline methods to generate positive binding and valid TCRs. These results demonstrate the potential of TCRPPO for both precision immunotherapy and peptide-recognizing TCR motif discovery.
-				 </p>
+		Training accurate and robust machine learning models requires a large amount of data that is usually scattered across data silos. Sharing or centralizing the data of different healthcare institutions is, however, unfeasible or prohibitively difficult due to privacy regulations. We address the problem of privacy-preserving training and evaluation of neural networks in an N-party, federated learning setting. Our solutions enable the computation of training under encryption by relying on multiparty homomorphic encryption. 
+		In the first part of this talk, I will present POSEIDON, the first of its kind in the regime of privacy-preserving neural network training. It preserves the confidentiality of the training data, the model, and the evaluation data, under a passive-adversary model and collusions between up to N−1 parties. Then, I will demonstrate the applicability of under-encryption training on biomedical analysis for disease-associated cell classification and single-cell analysis. For this, we design a system, PriCell, to enable training of a published state-of-the-art convolutional neural network in a decentralized and privacy-preserving manner. We compare the accuracy achieved by PriCell with the centralized and non-secure solutions and show that PriCell guarantees privacy without reducing the utility of the data. 
+
+		 </p>
                 </div>
               </p>
 
